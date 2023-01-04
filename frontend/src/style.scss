@@ -1,0 +1,336 @@
+:root {
+  --color-white: #fff;
+  --color-main: #116acc;
+  --color-saurus: #6b7280;
+  --color-charcoal: #374151;
+  --color-black: #000000;
+  --color-gunmetal: #182233;
+  --color-red: #fd4e5d;
+  --color-mantis: #76ca66;
+  --color-platinum: #e5e5e5;
+  --color-main-hover: #5897db;
+  --color-main-active: #0c4a8f;
+  --color-main-active-lighter: #cfe1f5;
+  --color-flash: #f3f4f6;
+  --color-comeo: #9ca3af;
+  --color-main-focus: #a0c3ff1a;
+  --color-invalid: #ba0000;
+  --color-skeleton: #c8ccd3;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0px 15px;
+  max-width: 1370px;
+}
+
+.heading {
+  margin: 0;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+.btn {
+  display: flex;
+  padding: 16px 21px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-white);
+  border: none;
+  border-radius: 7px;
+  background-color: var(--color-main);
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease-in-out;
+
+  &--loader {
+    padding: 0;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-main);
+    border-top: 2px solid transparent;
+    border-radius: 100%;
+    animation: spin 1.5s ease-in-out infinite;
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 34px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background: url("./assets/images/arrow.svg");
+    }
+  }
+
+  &:focus {
+    background-color: var(--color-main-hover);
+  }
+
+  &:hover {
+    background-color: var(--color-main-hover);
+  }
+
+  &:active {
+    background-color: var(--color-main-active);
+  }
+
+  &:disabled {
+    background-color: var(--color-comeo);
+  }
+}
+
+.input {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 1365px) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+
+    &--incorrect .input__input {
+      border: 1px solid var(--color-invalid);
+    }
+
+    &--correct .input__input {
+      border: 1px solid var(--color-mantis);
+    }
+
+    &--correct .input__success-img {
+      background: url("./assets/images/coolicon.svg");
+    }
+  }
+
+  &__success-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    line-height: 0;
+    font-size: 0;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-right: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (max-width: 1365px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__input {
+    width: 300px;
+    display: block;
+    padding: 10px 60px 10px 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-comeo);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-charcoal);
+    border-radius: 7px;
+    transition: color 0.15s ease-in-out, border 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-saurus);
+    }
+
+    &:disabled::placeholder {
+      color: var(--color-comeo);
+    }
+
+    &:focus {
+      border: 1px solid var(--color-main);
+      background-color: var(--color-main-focus);
+    }
+
+    @media (max-width: 550px) {
+      width: 260px;
+    }
+  }
+}
+
+.error-notice {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  padding: 10px 10px 10px 16px;
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: var(--color-invalid);
+
+  @media (max-width: 550px) {
+    width: 260px;
+  }
+
+  &__img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('./assets/images/exclam.svg');
+  }
+
+  &__text {
+    width: calc(100% - 30px);
+  }
+}
+
+.loader {
+  padding: 0;
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--color-main);
+  border-top: 2px solid transparent;
+  border-radius: 100%;
+  animation: spin 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

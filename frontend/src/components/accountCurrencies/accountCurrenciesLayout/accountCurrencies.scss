@@ -1,0 +1,457 @@
+.currencies-header {
+
+  padding-top: 50px;
+  padding-bottom: 25px;
+
+  @media (max-width: 1365px) {
+    padding-top: 30px;
+    padding-bottom: 5px;
+  }
+}
+
+.currencies {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+
+  @media (max-width: 1365px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__left {
+    margin-right: 50px;
+    width: calc(588/1340 * 100%);
+
+    @media (max-width: 1365px) {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+
+  }
+
+  &__right {
+    width: calc(703/1340 * 100%);
+
+    @media (max-width: 1365px) {
+      width: 100%;
+    }
+  }
+
+  &__wrap {
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    background: var(--color-white);
+
+    @media (max-width: 1365px) {
+      width: calc(50% - 25px);
+    }
+
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+
+    @media (max-width: 550px) {
+      padding: 15px;
+      border-radius: 25px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 44px;
+
+      @media (max-width: 1365px) {
+        margin-bottom: 0px;
+      }
+
+      @media (max-width: 900px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--darken {
+      height: 100%;
+      box-shadow: none;
+      background: #e5e5e5;
+
+      @media (max-width: 1365px) {
+        margin-bottom: 0px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+  }
+
+  &__rates {
+    max-height: 965px;
+
+    @media (max-width: 900px) {
+      max-height: 480px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__currency,
+  &__line,
+  &__amount {
+    margin-right: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: var(--color-black);
+  }
+
+  &__line {
+    display: flex;
+    flex: 1;
+    align-self: end;
+    padding-top: 3px;
+    border-top: 1px dashed var(--color-black);
+
+    &--up {
+      border-top: 1px dashed var(--color-mantis);
+    }
+
+    &--down {
+      border-top: 1px dashed var(--color-red);
+    }
+  }
+
+  &__amount {
+    font-weight: 400;
+  }
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+.exchange-form {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1365px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+
+    & .input__content {
+      margin-bottom: 0px;
+
+      @media (max-width: 1365px) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__targets {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__select-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @media (max-width: 1365px) {
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    }
+
+    & .choices {
+      width: 134px;
+      border-radius: 7px;
+      border: 1px solid var(--color-comeo);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (max-width: 1365px) {
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
+
+    &--amount {
+      margin-right: 8px;
+    }
+  }
+
+  &__btn {
+    align-items: center;
+    padding: 16px 13px;
+  }
+}
+
+.currencies__list--placeholder,
+.currencies__form-wrap--placeholder,
+.currencies__rates--placeholder {
+  background-repeat: no-repeat;
+  animation: shine 1s linear infinite alternate;
+}
+
+.currencies__list--placeholder {
+  height: 650px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0);
+  background-size:
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px;
+  background-position:
+    0px 0px,
+    0px 45px,
+    0px 90px,
+    0px 135px,
+    0px 180px,
+    0px 225px,
+    0px 270px,
+    0px 315px,
+    0px 360px,
+    0px 405px,
+    0px 450px,
+    0px 495px,
+    0px 540px,
+    0px 585px,
+    0px 630px;
+}
+
+.currencies__form-wrap--placeholder {
+  height: 117px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 44px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 44px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 44px, transparent 0),
+    linear-gradient(var(--color-skeleton) 117px, transparent 0);
+  background-size:
+    50px 20px,
+    100px 44px,
+    50px 20px,
+    100px 44px,
+    50px 20px,
+    300px 44px,
+    100px 117px;
+  background-position:
+    0px 12px,
+    70px 0px,
+    190px 12px,
+    260px 0px,
+    0px 80px,
+    60px 69px,
+    380px 0px;
+
+  @media (max-width: 1365px) {
+    height: 355px;
+    background-image:
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 117px, transparent 0);
+    background-size:
+      50px 20px,
+      100px 44px,
+      50px 20px,
+      100px 44px,
+      50px 20px,
+      300px 44px,
+      100px 52px;
+    background-position:
+      0px 0px,
+      0px 30px,
+      0px 94px,
+      0px 124px,
+      0px 188px,
+      0px 218px,
+      0px 292px;
+  }
+  @media (max-width: 550px) {
+    height: 355px;
+    background-image:
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 20px, transparent 0),
+      linear-gradient(var(--color-skeleton) 44px, transparent 0),
+      linear-gradient(var(--color-skeleton) 117px, transparent 0);
+    background-size:
+      50px 20px,
+      100px 44px,
+      50px 20px,
+      100px 44px,
+      50px 20px,
+      260px 44px,
+      100px 52px;
+    background-position:
+      0px 0px,
+      0px 30px,
+      0px 94px,
+      0px 124px,
+      0px 188px,
+      0px 218px,
+      0px 292px;
+  }
+}
+
+.currencies__rates--placeholder {
+  height: 965px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0),
+    linear-gradient(var(--color-skeleton) 20px, transparent 0);
+  background-size:
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px,
+    100% 20px;
+  background-position:
+    0px 0px,
+    0px 45px,
+    0px 90px,
+    0px 135px,
+    0px 180px,
+    0px 225px,
+    0px 270px,
+    0px 315px,
+    0px 360px,
+    0px 405px,
+    0px 450px,
+    0px 495px,
+    0px 540px,
+    0px 585px,
+    0px 630px,
+    0px 680px,
+    0px 725px,
+    0px 770px,
+    0px 815px,
+    0px 860px,
+    0px 905px,
+    0px 950px;
+}

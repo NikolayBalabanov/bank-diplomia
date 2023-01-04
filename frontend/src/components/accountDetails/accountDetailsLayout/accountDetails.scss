@@ -1,0 +1,334 @@
+.acc-details {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.details-header {
+  padding-top: 50px;
+  padding-bottom: 25px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 550px) {
+    padding-top: 25px;
+    padding-bottom: 10px;
+  }
+
+  &__left {
+    display: flex;
+    flex: 1;
+  }
+
+  &__title {
+    margin-right: 35px;
+
+    @media (max-width: 800px) {
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    @media (max-width: 550px) {
+      padding-top: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    @media (max-width: 900px) {
+      margin-bottom: 25px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 50px;
+    border-radius: 50px;
+    background: var(--color-flash);
+
+    @media (max-width: 900px) {
+      margin-bottom: 25px;
+      padding: 10px 15px;
+      border-radius: 25px;
+    }
+  }
+
+  &__strong-text {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+  }
+
+  &__balance-history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    &__chart-wrap {
+      width: 100%;
+    }
+
+    @media (max-width: 550px) {
+      border-radius: 25px;
+      padding: 10px 15px;
+    }
+  }
+
+  &__value {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+
+    @media (max-width: 800px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    @media (max-width: 550px) {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__heading {
+    margin-right: 50px;
+
+    @media (max-width: 800px) {
+      margin-right: 10px;
+    }
+  }
+
+  &__subtitle {
+    margin-right: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__balance-wrap {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    position: relative;
+    display: flex;
+
+    &--hide::after {
+      content: '...';
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--color-comeo);
+    }
+  }
+
+  &__prev,
+  &__next,
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--color-comeo);
+    outline: none;
+    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  &__next svg {
+    transform: rotate(180deg);
+  }
+
+  &__prev:focus,
+  &__next:focus,
+  &__btn:focus {
+    color: var(--color-white);
+    background-color: var(--color-main-hover);
+  }
+
+  &__prev:hover,
+  &__next:hover,
+  &__btn:hover {
+    color: var(--color-white);
+    background-color: var(--color-main-hover);
+  }
+
+  &__prev:active,
+  &__next:active,
+  &__btn:active {
+    color: var(--color-white);
+    background-color: var(--color-main-active);
+  }
+
+  &__prev--hidden,
+  &__next--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__btn--active {
+    color: var(--color-white);
+    background-color: #116ACC;
+  }
+
+  &__prev:focus svg path,
+  &__next:focus svg path {
+    stroke: var(--color-white);
+    transition: stroke 0.15s ease-in-out;
+  }
+
+  &__prev:hover svg path,
+  &__next:hover svg path {
+    stroke: var(--color-white);
+    transition: stroke 0.15s ease-in-out;
+  }
+
+  &__prev:active svg path,
+  &__next:active svg path {
+    stroke: var(--color-white);
+    transition: stroke 0.15s ease-in-out;
+  }
+}
+
+
+.details__up--skeleton,
+.details__balance-history--skeleton,
+.details__bottom--skeleton {
+  background-repeat: no-repeat;
+  animation: shine 1s linear infinite alternate;
+}
+
+.details__up--skeleton {
+  height: 40px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 40px, transparent 0),
+    linear-gradient(var(--color-skeleton) 40px, transparent 0),
+    linear-gradient(var(--color-skeleton) 40px, transparent 0);
+  background-size: 40% 40px, 10% 40px, 10% 40px;
+  background-position: 0px 0px, 60px 0px, 120px 0px;
+
+  @media (max-width: 550px) {
+    height: 75px;
+    background-size: 50% 40px, 15% 23px, 15% 23px;
+    background-position: 0px 0px, 0px 50px, 20% 50px;
+  }
+}
+
+.details__balance-history--skeleton {
+  height: 300px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 23px, transparent 0),
+    linear-gradient(var(--color-skeleton) 195px, transparent 0);
+  background-size:
+    30% 40px,
+    86% 195px;
+  background-position:
+    50px 25px,
+    50px 73px;
+
+  @media (max-width: 1365px) {
+    height: 352px;
+    background-image:
+      linear-gradient(var(--color-skeleton) 23px, transparent 0),
+      linear-gradient(var(--color-skeleton) 254px, transparent 0);
+    background-size:
+      30% 40px,
+      86% 254px;
+  }
+
+  @media (max-width: 550px) {
+    height: 322px;
+    background-position:
+      15px 10px,
+      15px 58px;
+    background-image:
+      linear-gradient(var(--color-skeleton) 23px, transparent 0),
+      linear-gradient(var(--color-skeleton) 254px, transparent 0);
+    background-size:
+      30% 40px,
+      89% 254px;
+  }
+}
+
+.details__bottom--skeleton {
+  height: 200px;
+  background-image:
+    linear-gradient(var(--color-skeleton) 23px, transparent 0),
+    linear-gradient(var(--color-skeleton) 150px, transparent 0);
+  background-size:
+    20% 40px,
+    93% 96px;
+  background-position:
+    50px 25px,
+    50px 73px;
+
+  @media (max-width: 550px) {
+    height: 322px;
+    background-position:
+      15px 10px,
+      15px 58px;
+    background-image:
+      linear-gradient(var(--color-skeleton) 23px, transparent 0),
+      linear-gradient(var(--color-skeleton) 254px, transparent 0);
+    background-size:
+      30% 40px,
+      89% 254px;
+  }
+}

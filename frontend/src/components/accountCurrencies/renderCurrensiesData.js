@@ -20,7 +20,6 @@ export async function renderCurrensiesData(
   )
   const currenciesData = await Api.getCurrenciesData()
   if (userCurrencies.payload && currenciesData.payload) {
-    console.log(containerCurrencies)
     socket = Api.getChangedCurrency()
     const currenciesDataItems = setCurrenciesDataItems(
       Object.entries(userCurrencies.payload)

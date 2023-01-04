@@ -1,6 +1,4 @@
 import { el, setChildren } from 'redom'
-import 'simplebar'
-import 'simplebar/dist/simplebar.css'
 
 export function setExchangeRates() {
   const exCurrenciesWrap = el('div.currencies__wrap.currencies__wrap--darken')

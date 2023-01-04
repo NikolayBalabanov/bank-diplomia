@@ -1,7 +1,6 @@
 import 'babel-polyfill'
 import 'normalize.css'
 import './choices.css'
-import 'simplebar/dist/simplebar.css'
 import './style.scss'
 import { setChildren } from 'redom'
 import { getHeader } from './components/header/header'

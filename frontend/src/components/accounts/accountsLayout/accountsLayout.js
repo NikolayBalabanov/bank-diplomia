@@ -105,7 +105,7 @@ export function getAccountsLayout() {
       if (info.error === 'Unauthorized') {
         // loader.remove()
         let data = {
-          titleText: 'Упс! Проблама с авторизацией',
+          titleText: 'Упс! Проблема с авторизацией',
           btn: 'Войти снова',
           callback: () => router.navigate('/auth'),
         }
@@ -156,7 +156,7 @@ export function getAccountsLayout() {
       addNewAccoutBtn.removeAttribute('disabled', 'disabled')
       if (isSucces.error === 'Unauthorized') {
         let data = {
-          titleText: 'Упс! Проблама с авторизацией',
+          titleText: 'Упс! Проблема с авторизацией',
           btn: 'Войти снова',
           callback: () => router.navigate('/auth'),
         }

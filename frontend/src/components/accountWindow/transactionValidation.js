@@ -48,7 +48,7 @@ export async function transactionFormValidation({
     sum.removeAttribute('disabled', 'disabled')
     if (transferPayBack.error === 'Unauthorized') {
       let data = {
-        titleText: 'Упс! Проблама с авторизацией',
+        titleText: 'Упс! Проблема с авторизацией',
         btn: 'Войти снова',
         callback: () => router.navigate('/auth'),
       }

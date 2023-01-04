@@ -20,7 +20,7 @@ export async function createMap(mapWrap) {
       mapWrap.classList.remove('bank-map__map-placeholder')
       if (mapData.error === 'Unauthorized') {
         let data = {
-          titleText: 'Упс! Проблама с авторизацией',
+          titleText: 'Упс! Проблема с авторизацией',
           btn: 'Войти снова',
           callback: () => router.navigate('/auth'),
         }

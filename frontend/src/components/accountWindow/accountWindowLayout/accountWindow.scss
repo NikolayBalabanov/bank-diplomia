@@ -175,6 +175,11 @@
     width: 100%;
   }
 
+  &__link {
+    text-decoration: none;
+    color: var(--color-black);
+  }
+
   .chart-container {
     display: block;
     position: relative;

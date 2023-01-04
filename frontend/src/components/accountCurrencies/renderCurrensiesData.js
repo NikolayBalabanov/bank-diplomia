@@ -77,7 +77,7 @@ export async function renderCurrensiesData(
   } else {
     if (userCurrencies.error || currenciesData.error) {
       let data = {
-        titleText: 'Упс! Проблама с авторизацией',
+        titleText: 'Упс! Проблема с авторизацией',
         btn: 'Войти снова',
         callback: () => router.navigate('/auth'),
       }

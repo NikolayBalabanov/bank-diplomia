@@ -149,36 +149,33 @@ export function getBalanceDynamics(data) {
 
       const currentYear = new Date().getFullYear()
       const currentMonth = new Date().getMonth()
-
-      let legend = (
-        balanceDict[currentYear] ? Object.entries(balanceDict[currentYear]) : []
-      )
+      console.log('balanceDict', balanceDict, currentYear)
+      console.log('balanceDict1', Object.entries(balanceDict[currentYear]))
+      let legend = Object.entries(balanceDict[currentYear])
         .filter((el) => {
-          if (+el[0] <= currentMonth) {
-            if (currentMonth - 6 >= 0 && +el[0] >= currentMonth - 6) {
-              return +el[0]
+          if (el[0] <= currentMonth) {
+            if (currentMonth - 6 >= 0 && el[0] >= currentMonth - 6) {
+              return el[0]
             } else {
-              return +el[0]
+              return el[0]
             }
           }
         })
         .sort((a, b) => a - b)
-        .map((el) => +el[0])
+        .map((el) => el[0])
 
-      let dynamicsPerMonth = (
-        balanceDict[currentYear] ? Object.entries(balanceDict[currentYear]) : []
-      )
+      let dynamicsPerMonth = Object.entries(balanceDict[currentYear])
         .filter((el) => {
-          if (+el[0] <= currentMonth) {
-            if (currentMonth - 6 >= 0 && +el[0] >= currentMonth - 6) {
-              return +el[0]
+          if (el[0] <= currentMonth) {
+            if (currentMonth - 6 >= 0 && el[0] >= currentMonth - 6) {
+              return el[0]
             } else {
-              return +el[0]
+              return el[0]
             }
           }
         })
         .sort((a, b) => a - b)
-        .map((el) => +el[1].to + +el[1].from)
+        .map((el) => el[1].to + el[1].from)
         .map((el) => Math.floor(el))
 
       const maxValue = Math.max(...dynamicsPerMonth)

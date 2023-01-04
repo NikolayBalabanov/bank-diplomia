@@ -50,7 +50,7 @@ export function getAccountWindow(id) {
     } else {
       if (info.error === 'Unauthorized') {
         let data = {
-          titleText: 'Упс! Проблама с авторизацией',
+          titleText: 'Упс! Проблeма с авторизацией',
           btn: 'Войти снова',
           callback: () => router.navigate('/auth'),
         }
